@@ -1,0 +1,95 @@
+//  Window object -> The window object represents the global window in a browser.Both the browser
+// object model (BOM) and document object model(DOM) are the part of the window object..
+
+// Browser object Model -> The BOM represents the browser as an object and provides the  methods and the 
+// properties for interacting with browser itself
+
+// Example -> BOM features include the window.navigator for browser information 
+// window.location for URL manipulation
+
+
+// DOM -> The DOM represents the structured document as a tree objects where each object 
+// correponds to a part of the document (such as elements , attributes , and text)..
+
+// The DOM is primarily concerned the content of the web page allows javascript to interact and 
+// manipulate the HTML element..
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Objects</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding: 40px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #fdfb4c;
+      color: black;
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      margin: 8px 10px 0 0;
+      font-size: 0.95rem;
+    }
+
+    .note {
+      font-size: 1rem;
+      color: #ccc;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>JS Window Obj</h2>
+    <span class="btn">Navigate</span>
+  </div>
+
+  <div class="section">
+    <h2>JavaScript History Object</h2>
+    
+    <button onclick="history.back()">Go Back</button>
+
+    <span class="btn">Go Forward</span>
+    <span class="btn">Move Backward or forward</span>
+  </div>
+
+  <div class="section">
+    <h2>JavaScript Location Object</h2>
+    <span class="btn">Reload the Page</span>
+    <span class="btn">Navigate Page using replace</span>
+    <span class="btn">Navigate Page with Assign</span>
+  </div>
+
+  <div class="section">
+    <h2>JavaScript Screen Object</h2>
+    <p class="note">We will see in console.</p>
+  </div>
+  <script>
+    alert("Hello welcome to the DOM manipulation");
+  </script>
+</body>
+</html>
+
+drew binsky
+
+
+

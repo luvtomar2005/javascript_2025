@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler Demo</title>
+    <style>
+        /* CSS for the page styling */
+        body {
+            background-color: #1a1a1a; /* Dark background */
+            color: white; /* White text */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 2.5em; /* Large headings */
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px; /* Space between buttons */
+            margin-bottom: 30px;
+        }
+
+        .event-btn {
+            background-color: #ffee00; /* Yellow background */
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px; /* Rounded corners */
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .event-btn:hover {
+            background-color: #ffd900;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #333;
+            margin: 40px 0;
+            visibility: hidden; /* Hide the separator lines visually, keeping structure */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Inline Event</h2>
+    <div class="button-group">
+        <button onclick = "alert('Welcome to the course')" class="event-btn" onclick="inlineGreeting('Hello from Inline Event!')">greeting</button>
+        <button ondblclick="alert('Window shows double click alert')" class="event-btn" onclick="inlineGreeting('Hello again from Inline Event!')">greeting again</button>
+        <button onmouseover = "alert('Welcome to the course')" class="event-btn" onclick="inlineGreeting('Hello from Inline Event!')">greeting</button>
+        
+    </div>
+
+    <hr>
+
+    <h2>Dom Event handler</h2>
+    <div class="button-group">
+        <button class="event-btn" id="domBtn1">greeting</button>
+        <button class="event-btn" id="domBtn2">greeting again</button>
+    </div>
+
+    <hr>
+
+    <h2>addEventListener Event handler</h2>
+    <div class="button-group">
+        <button class="event-btn" id="listenerBtn1">greeting</button>
+        <button class="event-btn" id="listenerBtn2">greeting again</button>
+    </div>
+    <script>
+        document.getElementById('domBtn1').onclick = () =>{
+            alert("Welcome to the JS LEarning")
+        };
+        // // document.getElementById('domBtn1').onclick = function(){
+        //     alert('Welcome to the Js learning')
+        // };
+
+        // add event listener
+        document.getElementById('listenerBtn1').addEventListener("click" , function(){
+            alert('welcome to js learning')
+        });
+        document.getElementById('listenerBtn2').addEventListener("click" , () => {
+            alert('welcome to js learning')
+        });
+    </script>
+</body>
+</html>
