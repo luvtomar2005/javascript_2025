@@ -2,18 +2,101 @@
 <html lang="en">
 <head>
     <style>
-       
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            width: 280px;
+            padding: 12px 18px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background-color: #f7f7f7;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .output {
+            background-color: #1e1e1e;
+            padding: 25px 30px;
+            border-radius: 12px;
+            width: 280px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .output p {
+            margin: 10px 0;
+            font-size: 15px;
+            color: #cfcfcf;
+        }
+
+        .output p::before {
+            color: #d0ff6f;
+            font-weight: 500;
+        }
+
+        .keyPressed::before {
+            content: "Key pressed: ";
+        }
+
+        .keyCode::before {
+            content: "Key code: ";
+        }
+
+        .charCode::before {
+            content: "Char codeAt: ";
+        }
+
+        .eventType::before {
+            content: "Event type: ";
+        }
     </style>
 </head>
 <body>
     <div>
-        <input type="text" id="myInput" placeholder="Type something ...">
+        <input type="text" id="myInput" placeholder="Type something...">
         <div class="output">
-            <p class="keyPressed">Key pressed:</p>
-            <p class="keyCode">Key code:</p>
-            <p class="charCode">Char codeAt:</p>
-            <p class="eventType">Event type:</p>
+            <p class="keyPressed"></p>
+            <p class="keyCode"></p>
+            <p class="charCode"></p>
+            <p class="eventType"></p>
         </div>
     </div>
+    <script>
+        const handleKeys = (event) =>{
+            console.log(event);
+
+            console.log("key press" , event.key);
+            console.log("event type" , event.type);
+            console.log("key code" , event.code);
+
+            document.querySelector(".keyPressed" , ).textContent = `Key presses :  ${event.key}`;
+            document.querySelector(".keyCode" , ).textContent = `KeyCode  :  ${event.code}`;
+            document.querySelector(".charCode" , ).textContent = `Char Code  :  ${event.key.charCodeAt(0)}`;
+            // Important to write 0 for getting the data 
+            document.querySelector(".eventType" , ).textContent = `Event Type :  ${event.type}`;
+        }
+        var myInput = document.getElementById("myInput");
+        myInput.addEventListener("keydown" , handleKeys);
+    </script>
 </body>
 </html>
