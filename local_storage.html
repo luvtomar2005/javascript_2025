@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Storage Demo</title>
+  <style>
+    body {
+      background-color: #111;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button {
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      color: #222;
+    }
+
+    .add-btn {
+      background-color: #f3f35f;
+    }
+
+    .get-btn {
+      background-color: #85bfa2;
+    }
+
+    .delete-btn {
+      background-color: #f56b6b;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <button id="add-btn" class="add-btn">Add Data to localStorage</button>
+  <button id="get-btn" class="get-btn">Get Data from localStorage</button>
+  <button id="delete-btn" class="delete-btn">Delete Data from localStorage</button>
+
+  <script>
+    const studentData = {
+      firstName: "Luv",
+      lastName: "Tomar",
+      age: 20,
+      gender: "Male",
+      grade: "A",
+      courses: ["Math", "Javascript", "Data Structure"],
+      address: {
+        street: "Motikunj",
+        city: "Mathura"
+      }
+    };
+
+    const addToDoList = () => {
+      localStorage.setItem("objectData", JSON.stringify(studentData));
+      console.log("Data Added Successfully ✅");
+    };
+
+    const getToDoList = () => {
+      const retrievedStudents = JSON.parse(localStorage.getItem("objectData"));
+      console.log("Retrieved Data is:", retrievedStudents);
+    };
+
+    const removeToDoList = () => {
+      localStorage.removeItem("objectData");
+      console.log("Data Removed from Local Storage ❌");
+    };
+
+    document.getElementById("add-btn").addEventListener("click", addToDoList);
+    document.getElementById("get-btn").addEventListener("click", getToDoList);
+    document.getElementById("delete-btn").addEventListener("click", removeToDoList);
+  </script>
+</body>
+</html>
