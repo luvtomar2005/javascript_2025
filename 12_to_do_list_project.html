@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="12_todDoStyle.css">
+</head>
+<body>
+   
+    <br>
+    <form>
+        <div>
+            <input type="text" id="inputValue">
+            <button class="add-btn">Add TODO</button>
+        </div>
+        <section class="todo-list-element"></section>
+    </form>
+
+   <script>
+    const mainToDoElement = document.querySelector(".todo-list-element");
+    const inputValue = document.getElementById("inputValue");
+
+    const addToDoList = (e) => {
+        e.preventDefault();
+        const divElement = document.createElement("div");
+        divElement.classList.add("main_todo_div");
+        divElement.innerHTML = `
+            <li>${inputValue.value}</li> 
+            <button class="deleteBtn">Delete</button>
+        `;
+        mainToDoElement.append(divElement);
+        inputValue.value = ""; // clears input after adding
+    }
+
+    document.querySelector(".add-btn").addEventListener("click", (e) => {
+        addToDoList(e);
+    });
+</script>
+
+      
+</body>
+</html>
