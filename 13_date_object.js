@@ -38,4 +38,69 @@ console.log(date5);
 
 // Javscript get date methods
 
+// You can get the various components of date using the date object
+const currentDate2 = new Date();
+const year  = currentDate2.getFullYear();
+console.log(year);
+const month = currentDate2.getMonth();
+console.log(month);
+const day = currentDate2.getDay();
+console.log(day);
+const date = currentDate2.getDate();
+console.log(date);
 
+// Javascript set time methods
+const date6 = new Date();
+date6.setHours(10);
+console.log(date6); //  Date object set the hours to 10
+
+console.log(date6);
+
+date6.setMinutes(30);
+console.log(date6);
+
+date6.setSeconds(400);
+console.log(date6);
+
+// A few useful methods in of the Date object 
+// JavaScript Date formatting methods
+
+const date7 = new Date();
+
+// 1️⃣ Returns only the date portion (according to your locale)
+const localDate = date7.toLocaleDateString();
+console.log("Locale Date:", localDate);
+
+// 2️⃣ Returns only the time portion (according to your locale)
+const localTime = date7.toLocaleTimeString();
+console.log("Locale Time:", localTime);
+
+// 3️⃣ Returns both date and time together (according to your locale)
+const localDateTime = date7.toLocaleString();
+console.log("Locale Date & Time:", localDateTime);
+
+// 4️⃣ To verify the original Date object (unchanged)
+console.log("Original Date Object:", date7);
+// Interview question
+// q1 -> Write a function to 7 days to a specified given date
+const addDaystoDate = (date, days) => {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+};
+const date8 = new Date("2025-03-22");
+const newDate9 = addDaystoDate(date8,7);
+console.log(newDate9); 
+
+// q2 -> Write a function to calculate the difference between two dates
+
+const getDifference = (d1, d2) =>{
+    let oneDay = 24*60*60*1000;
+    let diff = d2 - d1;
+    return Math.round(diff/oneDay);
+
+}
+
+const newDate1 = new Date("2025-04-12");
+const newDate2 = new Date("2025-04-22");
+console.log(getDifference(newDate1,newDate2));
