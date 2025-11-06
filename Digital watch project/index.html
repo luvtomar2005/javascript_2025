@@ -97,6 +97,19 @@
       </div>
     </div>
 
-    <script></script>
+    <script>
+  function currTime() {
+    const presentTime = new Date().toLocaleTimeString();
+    document.getElementById('clock').innerHTML = presentTime;
+  }
+
+  // Run immediately once
+  currTime();
+
+  // Then update every second
+  const intervalId = setInterval(currTime, 1000);
+  setTimeout(() => clearInterval(intervalId) , 5000);
+</script>
+
   </body>
 </html>
