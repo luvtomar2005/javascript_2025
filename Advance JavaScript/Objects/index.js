@@ -302,7 +302,21 @@ console.log(aboutMe);
 //* ================================================
 //! Problem: Write a function that compares two objects to determine if they have the same properties and values.
 
-// // Example usage:
+const areObjectsEqual = (obj1, obj2) => {
+      let o1 = Object.keys(obj1);
+      let o2 = Object.keys(obj2);
+
+      if(o1.length != o2.length){
+        console.log('Hi');
+        return false;
+      }
+      for(let key in obj1){
+        if(obj1[key] != obj2[key]){
+          return false;
+        }
+      }
+      return true;
+}
 let objA = { name: "Alice", age: 26, city: "New York" };
 let objB = { name: "Alice", age: 26, city: "New York" };
 let objC = { name: "Bob", age: 30, city: "San Francisco" };
@@ -315,6 +329,23 @@ console.log(areObjectsEqual(objA, objC)); // Should return false
 //* ================================================
 //! Problem: Write a function that transforms an array of an objects 
 // into an object where the keys are the objects' ids.
+let inputArray = [
+  {id : 1 , name : "Luv"},
+  {id : 2 , name : "Shobhit"},
+  {id : 3 , name : "Anand"}
+];
+
+const arrayToObj = (arr) => {
+  console.log(arr[2].name);
+  let obj = {}
+  for(let key of arr){
+    console.log(key.id, key);
+    obj[key.id] =  key;
+  }
+  return obj;
+}
+console.log(arrayToObj(inputArray));
+
 
 // console.log(arrayToObj(inputArray));
 // Should print: { '1': { id: 1, name: 'Alice' }, '2': { id: 2, name: 'Bob' }, '3': { id: 3, name: 'Charlie' } }
