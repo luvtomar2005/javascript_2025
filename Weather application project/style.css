@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+}
+
+.container {
+  width: 42%;
+  margin: 4rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #000;
+}
+
+/* Search Bar */
+.weather_header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.weather_search {
+  position: relative;
+  width: 100%;
+}
+
+.weather_search i {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: #fff;
+}
+
+.weather_search input {
+  width: 100%;
+  padding: 0.8rem 2.5rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 15px;
+}
+
+.weather_search input::placeholder {
+  color: #dedede;
+}
+
+/* Main Weather */
+.weather_body {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.weather_city {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.weather_datetime {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.weather_group {
+  margin: 1rem 0;
+}
+
+.weather_status {
+  background: #1e1e1e;
+  color: #fff;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.weather_icon img {
+  width: 110px;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.weather_temp {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.weather_minmax {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.weather_minmax p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Cards Section */
+.weather_info {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.weather_card {
+  display: flex;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 12px;
+  gap: 1rem;
+}
+
+.weather_card i {
+  font-size: 1.7rem;
+  color: #171717;
+}
+
+.weather_card p {
+  font-size: 13px;
+  color: #555;
+}
+
+.weather_card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .weather_info {
+    grid-template-columns: 1fr;
+  }
+}
